@@ -1,6 +1,8 @@
 import React from "react";
 import { ThemeModeToggle } from "./ThemeToggle";
-import { Heading } from "./ui/Typography";
+import { Heading, headingClasses } from "./ui/Typography";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 type Props = {};
 
@@ -8,7 +10,7 @@ const Navbar = (props: Props) => {
   return (
     <div className="flex justify-between">
       <div>
-        <Heading variant="h2">Radiant</Heading>
+        <Link href={"/"} className={cn(headingClasses["h2"])}>Radiant</Link>
       </div>
       <ThemeModeToggle />
     </div>
