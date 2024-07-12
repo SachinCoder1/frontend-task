@@ -1,5 +1,6 @@
 import DepositedAssets from "@/components/home/DepositedAssets";
 import Main from "@/components/home/main/Main";
+import Right from "@/components/home/main/Right";
 import OtherStats from "@/components/home/OtherStats";
 import Overview from "@/components/home/Overview";
 import Navbar from "@/components/Navbar";
@@ -12,7 +13,7 @@ export default function Home() {
         <Navbar />
       </div>
       <div className="md:px-10 px-2">
-        <div className="mt-4 grid md:grid-cols-2 px-4 gap-2">
+        <div className="mt-4 grid lg:grid-cols-2 px-4 gap-2">
         <Card className="rounded-2xl">
             <CardContent>
             <Main />
@@ -20,7 +21,7 @@ export default function Home() {
           </Card>
           <Card className="rounded-2xl">
             <CardContent className="">
-            <Main />
+            <Right />
             </CardContent>
           </Card>
         </div>

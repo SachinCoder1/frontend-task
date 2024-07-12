@@ -42,10 +42,10 @@ const CryptoInput: React.FC<CryptoInputProps> = ({
           <span className="font-medium">{symbol}</span>
         </div>
       </div>
-      <div className="flex  justify-end items-center gap-x-2 text-purple-600 cursor-pointer hover:text-purple-700">
+      <div className="flex  justify-end items-center gap-x-2 text-primary cursor-pointer hover:text-primary/90">
         <span>{balance}</span>
         <span className="text-xs">
-          <WalletMinimalIcon className="text-purple-600 w-5 h-5" />
+          <WalletMinimalIcon className="text-primary w-5 h-5" />
         </span>
       </div>
     </div>
