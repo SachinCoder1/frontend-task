@@ -13,24 +13,24 @@ export default function Home() {
         <Navbar />
       </div>
       <div className="md:px-10 px-2">
-        <div className="mt-4 grid lg:grid-cols-2 px-4 gap-4">
-        <Card className="rounded-2xl">
+        <div className="mt-4 grid lg:grid-cols-2 lg:px-4 px-0.5 gap-4">
+          <Card className="rounded-2xl">
             <CardContent className="h-full">
-            <Main />
+              <Main />
             </CardContent>
           </Card>
           <Card className="rounded-2xl h-full">
             <CardContent className="h-full">
-            <Right />
+              <Right />
             </CardContent>
           </Card>
         </div>
-        <div className="mt-4 grid md:grid-cols-3 px-4 gap-4">
-          <Card className="rounded-2xl">
+        <div className="mt-4 grid lg:grid-cols-3 px-4 gap-4">
+          <Card className="rounded-2xl w-full">
             <CardHeader>
               <CardTitle>Your deposited assets</CardTitle>
             </CardHeader>
-            <CardContent className="border-t pt-3">
+            <CardContent className="border-t pt-3 w-full">
               <DepositedAssets />
             </CardContent>
           </Card>

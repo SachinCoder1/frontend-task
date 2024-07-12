@@ -20,7 +20,7 @@ const TabsContent = ({ title, label, onClick, children }: Props) => {
         <div className="pt-4">{children}</div>
       </div>
       <div className="pb-10">
-        <Button onClick={onClick} className="w-full">
+        <Button onClick={onClick} className="w-full lg:py-4 lg:h-auto">
           Continue
         </Button>
       </div>

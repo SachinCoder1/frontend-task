@@ -54,7 +54,7 @@
     @apply border-border;
   }
   html {
-    @apply scroll-smooth;
+    @apply scroll-smooth w-fit;
   }
   body {
     @apply bg-background text-foreground;

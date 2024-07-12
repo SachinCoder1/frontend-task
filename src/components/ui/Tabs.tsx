@@ -28,7 +28,7 @@ const Tabs: React.FC<TabsProps> = ({ tabs, onTabChange }) => {
           variant={"outline"}
           key={tab.value}
           onClick={() => handleTabClick(tab.value)}
-          className={`py-2 lg:px-12 px-4 rounded-2xl ${
+          className={`py-2 xl:px-12 px-4 rounded-2xl ${
             selectedTab === tab.value ? "bg-background shadow-md" : "bg-transparent border-none hover:text-black"
           }`}
         >

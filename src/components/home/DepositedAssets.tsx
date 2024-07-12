@@ -11,12 +11,12 @@ import { depositedAssetsData } from "@/lib/data/deposited-assets";
 
 export default function DepositedAssets() {
   return (
-    <Table>
+    <Table className="w-full">
       <TableHeader>
         <TableRow>
-          <TableHead className="w-[200px]">Assets</TableHead>
-          <TableHead className="text-right w-[50px]">Balance</TableHead>
-          <TableHead className="text-right w-[50px]">Value</TableHead>
+          <TableHead className="w-full">Assets</TableHead>
+          <TableHead className="text-right">Balance</TableHead>
+          <TableHead className="text-right">Value</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
