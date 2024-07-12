@@ -1,3 +1,4 @@
+import DepositedAssets from "@/components/home/DepositedAssets";
 import Navbar from "@/components/Navbar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 
@@ -16,7 +17,9 @@ export default function Home() {
             <CardHeader>
               <CardTitle>Your deposited assets</CardTitle>
             </CardHeader>
-            <CardContent className="border-t"></CardContent>
+            <CardContent className="border-t pt-6">
+              <DepositedAssets />
+            </CardContent>
           </Card>
           <Card className="rounded-2xl">
             <CardHeader>
