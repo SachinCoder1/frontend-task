@@ -4,8 +4,11 @@ import React, { useState } from "react";
 import Tabs from "@/components/ui/Tabs";
 import TabsContent from "./TabsContent";
 import CryptoInput from "./CryptoInput";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store";
 
 const Main: React.FC = () => {
+  const {currency,currencySrc,walletBalance} = useSelector((state: RootState) => state.leverage);
   const [tabValue, setTabValue] = useState("deposit");
   const tabs = [
     { text: "Deposit", value: "deposit" },
@@ -24,18 +27,18 @@ const Main: React.FC = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 h-full">
       <Tabs tabs={tabs} onTabChange={handleTabChange} />
       {tabValue === "deposit" && (
-        <div>
+        <div className="h-full">
           <TabsContent
             title="Deposit ETH"
             label="Enter your desired amount to deposit."
           >
             <CryptoInput
-              symbol="ETH"
-              icon={"/currencies/ETH.svg"}
-              balance={5}
+              symbol={currency}
+              icon={currencySrc}
+              balance={walletBalance}
               onChange={handleValueChange}
             />
           </TabsContent>

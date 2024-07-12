@@ -1,10 +1,10 @@
 'use client'
 
 import { combineReducers } from '@reduxjs/toolkit';
-import counterReducer from './slices/counterSlice';
+import leverageReducer from './slices/leverageSlice';
 
 const rootReducer = combineReducers({
-  counter: counterReducer,
+  leverage: leverageReducer,
 });
 
 export default rootReducer;
