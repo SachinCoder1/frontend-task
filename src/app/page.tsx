@@ -1,3 +1,4 @@
+import Counter from "@/components/Counter";
 import DepositedAssets from "@/components/home/DepositedAssets";
 import Main from "@/components/home/main/Main";
 import Right from "@/components/home/main/Right";
@@ -12,6 +13,7 @@ export default function Home() {
       <div className="border-b py-2 px-4">
         <Navbar />
       </div>
+      <Counter />
       <div className="md:px-10 px-2">
         <div className="mt-4 grid lg:grid-cols-2 px-4 gap-2">
         <Card className="rounded-2xl">
