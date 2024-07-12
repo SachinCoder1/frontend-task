@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import Tabs from "@/components/ui/Tabs";
+import TabsContent from "./TabsContent";
+import CryptoInput from "./CryptoInput";
 
 const Main: React.FC = () => {
   const [tabValue, setTabValue] = useState("deposit");
@@ -17,10 +19,28 @@ const Main: React.FC = () => {
     setTabValue(value);
   };
 
+  const handleValueChange = (value: number) => {
+    console.log("Input value:", value);
+  };
+
   return (
     <div className="p-4">
       <Tabs tabs={tabs} onTabChange={handleTabChange} />
-      {tabValue === "deposit" && <div>deposit</div>}
+      {tabValue === "deposit" && (
+        <div>
+          <TabsContent
+            title="Deposit ETH"
+            label="Enter your desired amount to deposit."
+          >
+            <CryptoInput
+              symbol="ETH"
+              icon={"/currencies/ETH.svg"}
+              balance={5}
+              onChange={handleValueChange}
+            />
+          </TabsContent>
+        </div>
+      )}
       {tabValue === "borrow" && <div>borrow</div>}
       {tabValue === "withdraw" && <div>withdraw</div>}
       {tabValue === "repay" && <div>repay</div>}
