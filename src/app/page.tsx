@@ -1,4 +1,5 @@
 import DepositedAssets from "@/components/home/DepositedAssets";
+import OtherStats from "@/components/home/OtherStats";
 import Overview from "@/components/home/Overview";
 import Navbar from "@/components/Navbar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
@@ -34,7 +35,9 @@ export default function Home() {
             <CardHeader>
               <CardTitle>Other stats</CardTitle>
             </CardHeader>
-            <CardContent className="border-t"></CardContent>
+            <CardContent className="border-t pt-3">
+              <OtherStats />
+            </CardContent>
           </Card>
         </div>
       </div>
