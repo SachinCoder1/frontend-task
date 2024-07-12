@@ -1,4 +1,5 @@
 import DepositedAssets from "@/components/home/DepositedAssets";
+import Overview from "@/components/home/Overview";
 import Navbar from "@/components/Navbar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 
@@ -8,7 +9,7 @@ export default function Home() {
       <div className="border-b py-2 px-4">
         <Navbar />
       </div>
-      <div className="px-10">
+      <div className="md:px-10 px-2">
         {/* <div className="mt-4 grid md:grid-cols-2 px-4 gap-2">
           
         </div> */}
@@ -17,7 +18,7 @@ export default function Home() {
             <CardHeader>
               <CardTitle>Your deposited assets</CardTitle>
             </CardHeader>
-            <CardContent className="border-t pt-6">
+            <CardContent className="border-t pt-3">
               <DepositedAssets />
             </CardContent>
           </Card>
@@ -25,7 +26,9 @@ export default function Home() {
             <CardHeader>
               <CardTitle>Overview</CardTitle>
             </CardHeader>
-            <CardContent className="border-t"></CardContent>
+            <CardContent className="border-t pt-3">
+              <Overview />
+            </CardContent>
           </Card>
           <Card className="rounded-2xl">
             <CardHeader>
