@@ -6,7 +6,6 @@ import TabsContent from "./TabsContent";
 import CryptoInput from "./CryptoInput";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store";
-import APR from "./APR";
 import APRItem from "./AprItem";
 
 const Right: React.FC = () => {
@@ -30,22 +29,6 @@ const Right: React.FC = () => {
     console.log("Input value:", value);
   };
 
-  const items = [
-    {
-      icon: "/currencies/ETH.svg",
-      label: "RDNT APR",
-      value: "45.54%",
-      bgColor: "bg-gray-200",
-    },
-    {
-      icon: "/currencies/ETH.svg",
-      label: "ETH APR",
-      value: "0%",
-      bgColor: "bg-gray-100",
-    },
-    { icon: "", label: "Projected APR", value: "0%" },
-  ];
-
   return (
     <div className="p-4 h-full">
       <Tabs tabs={tabs} onTabChange={handleTabChange} />
@@ -62,11 +45,23 @@ const Right: React.FC = () => {
               onChange={handleValueChange}
             />
             <div className="pt-4">
-
-            <APRItem name="Health Factor" value="0.00" />
-            <APRItem iconSrc="/currencies/ETH.svg" name="RDNT APR" value="45.52%" className="bg-secondary" />
-            <APRItem iconSrc="/currencies/ETH.svg" name="ETH APR" value="0%" />
-            <APRItem name="Projected APR" value="0%" className="bg-secondary" />
+              <APRItem name="Health Factor" value="0.00" />
+              <APRItem
+                iconSrc="/currencies/ETH.svg"
+                name="RDNT APR"
+                value="45.52%"
+                className="bg-secondary"
+              />
+              <APRItem
+                iconSrc="/currencies/ETH.svg"
+                name="ETH APR"
+                value="0%"
+              />
+              <APRItem
+                name="Projected APR"
+                value="0%"
+                className="bg-secondary"
+              />
             </div>
           </TabsContent>
         </div>

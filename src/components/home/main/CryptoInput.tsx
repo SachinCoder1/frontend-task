@@ -34,7 +34,6 @@ const CryptoInput: React.FC<CryptoInputProps> = ({
             value={value}
             onChange={handleInputChange}
             className="text-2xl font-semibold outline-none w-full bg-transparent"
-            // style={{ background: "none" }}
             placeholder="0"
           />
           <span className="text-muted-foreground">
