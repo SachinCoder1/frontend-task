@@ -7,14 +7,20 @@ import { useTheme } from "next-themes";
 import { Button } from "./ui/Button";
 
 export function ThemeModeToggle() {
-  const { setTheme, theme } = useTheme();
+  const { setTheme, theme, systemTheme } = useTheme();
+
+  const handleTheme = () => {
+    if (theme === 'dark' || (theme === 'system' && systemTheme === 'dark')) {
+      setTheme('light');
+    } else {
+      setTheme('dark');
+    }
+  };
 
   return (
     <div>
       <Button
-        onClick={() =>
-          theme === "light" ? setTheme("dark") : setTheme("light")
-        }
+        onClick={handleTheme}
         variant="outline"
         size="icon"
       >
