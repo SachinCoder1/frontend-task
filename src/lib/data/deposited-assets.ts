@@ -31,7 +31,7 @@ export const depositedAssetsData = [
   },
   {
     assetName: "wstETH",
-    assetSrc: "/currencies/wstETH.svg",
+    assetSrc: "/currencies/wstEth.svg",
     balance: "0.00",
     value: "$0.00",
   },
