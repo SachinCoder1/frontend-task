@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { WalletMinimalIcon } from "lucide-react";
 import Image from "next/image";
@@ -33,10 +33,13 @@ const CryptoInput: React.FC<CryptoInputProps> = ({
             type="text"
             value={value}
             onChange={handleInputChange}
-            className="text-2xl font-semibold outline-none w-full"
+            className="text-2xl font-semibold outline-none w-full bg-transparent"
+            // style={{ background: "none" }}
             placeholder="0"
           />
-          <span className="text-gray-400">${(value * 2000).toFixed(2)}</span>{" "}
+          <span className="text-muted-foreground">
+            ${(value * 2000).toFixed(2)}
+          </span>{" "}
         </div>
         <div className="flex items-center ml-auto space-x-2">
           <Image width={16} height={16} src={icon} alt={symbol} />

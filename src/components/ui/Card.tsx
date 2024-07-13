@@ -76,4 +76,33 @@ const CardFooter = React.forwardRef<
 ))
 CardFooter.displayName = "CardFooter"
 
-export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
+
+type CardWrapperProps = {
+  title?: string;
+  children: React.ReactNode;
+  contentClassName?: string;
+};
+const CardWrapper = ({
+  title,
+  children,
+  contentClassName,
+}: CardWrapperProps) => (
+  <Card className="rounded-2xl w-full">
+    {title && (
+      <CardHeader>
+        <CardTitle>{title}</CardTitle>
+      </CardHeader>
+    )}
+    <CardContent
+      className={cn(
+        "w-full h-full",
+        title && "border-t pt-3",
+        contentClassName
+      )}
+    >
+      {children}
+    </CardContent>
+  </Card>
+);
+
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent,CardWrapper }

@@ -3,54 +3,33 @@ import Main from "@/components/home/main/Main";
 import Right from "@/components/home/main/Right";
 import OtherStats from "@/components/home/OtherStats";
 import Overview from "@/components/home/Overview";
-import Navbar from "@/components/Navbar";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
+import { CardWrapper } from "@/components/ui/Card";
 
 export default function Home() {
   return (
-    <main className="my-2">
-      <div className="border-b py-2 px-4">
-        <Navbar />
+    <main className="my-2 md:px-10 px-2">
+      <div className="mt-4 grid lg:grid-cols-2 lg:px-4 px-0.5 gap-4">
+        <CardWrapper>
+          <Main />
+        </CardWrapper>
+
+        <CardWrapper>
+          <Right />
+        </CardWrapper>
       </div>
-      <div className="md:px-10 px-2">
-        <div className="mt-4 grid lg:grid-cols-2 lg:px-4 px-0.5 gap-4">
-          <Card className="rounded-2xl">
-            <CardContent className="h-full">
-              <Main />
-            </CardContent>
-          </Card>
-          <Card className="rounded-2xl h-full">
-            <CardContent className="h-full">
-              <Right />
-            </CardContent>
-          </Card>
-        </div>
-        <div className="mt-4 grid lg:grid-cols-3 px-4 gap-4">
-          <Card className="rounded-2xl w-full">
-            <CardHeader>
-              <CardTitle>Your deposited assets</CardTitle>
-            </CardHeader>
-            <CardContent className="border-t pt-3 w-full">
-              <DepositedAssets />
-            </CardContent>
-          </Card>
-          <Card className="rounded-2xl">
-            <CardHeader>
-              <CardTitle>Overview</CardTitle>
-            </CardHeader>
-            <CardContent className="border-t pt-3">
-              <Overview />
-            </CardContent>
-          </Card>
-          <Card className="rounded-2xl">
-            <CardHeader>
-              <CardTitle>Other stats</CardTitle>
-            </CardHeader>
-            <CardContent className="border-t pt-3">
-              <OtherStats />
-            </CardContent>
-          </Card>
-        </div>
+
+      <div className="mt-4 grid lg:grid-cols-3 px-4 gap-4">
+        <CardWrapper title="Your deposited assets">
+          <DepositedAssets />
+        </CardWrapper>
+
+        <CardWrapper title="Overview">
+          <Overview />
+        </CardWrapper>
+
+        <CardWrapper title="Other stats">
+          <OtherStats />
+        </CardWrapper>
       </div>
     </main>
   );
