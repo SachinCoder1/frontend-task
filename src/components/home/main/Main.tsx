@@ -8,7 +8,9 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/store";
 
 const Main: React.FC = () => {
-  const {currency,currencySrc,walletBalance} = useSelector((state: RootState) => state.leverage);
+  const { currency, currencySrc, walletBalance } = useSelector(
+    (state: RootState) => state.leverage
+  );
   const [tabValue, setTabValue] = useState("deposit");
   const tabs = [
     { text: "Deposit", value: "deposit" },
@@ -44,8 +46,32 @@ const Main: React.FC = () => {
           </TabsContent>
         </div>
       )}
-      {tabValue === "borrow" && <div>borrow</div>}
-      {tabValue === "withdraw" && <div>withdraw</div>}
+      {tabValue === "borrow" && (
+        <TabsContent
+          title="Borrow ETH"
+          label="Enter your desired amount to Borrow."
+        >
+          <CryptoInput
+            symbol={currency}
+            icon={currencySrc}
+            balance={walletBalance}
+            onChange={handleValueChange}
+          />
+        </TabsContent>
+      )}
+      {tabValue === "withdraw" && (
+        <TabsContent
+          title="Withdraw ETH"
+          label="Enter your desired amount to withdraw."
+        >
+          <CryptoInput
+            symbol={currency}
+            icon={currencySrc}
+            balance={walletBalance}
+            onChange={handleValueChange}
+          />
+        </TabsContent>
+      )}
       {tabValue === "repay" && <div>repay</div>}
     </div>
   );

@@ -5,13 +5,17 @@ import Tabs from "@/components/ui/Tabs";
 import TabsContent from "./TabsContent";
 import CryptoInput from "./CryptoInput";
 import { useSelector } from "react-redux";
-import { RootState } from "@/store";
+import { RootState, useAppDispatch } from "@/store";
 import APRItem from "./AprItem";
+import APR from "./APR";
+import { setInputValue } from "@/store/slices/leverageSlice";
 
 const Right: React.FC = () => {
   const { currency, currencySrc, walletBalance } = useSelector(
     (state: RootState) => state.leverage
   );
+  const dispatch = useAppDispatch();
+
   const [tabValue, setTabValue] = useState("deposit");
   const tabs = [
     { text: "Deposit", value: "deposit" },
@@ -27,6 +31,7 @@ const Right: React.FC = () => {
 
   const handleValueChange = (value: number) => {
     console.log("Input value:", value);
+    dispatch(setInputValue(value));
   };
 
   return (
@@ -44,29 +49,24 @@ const Right: React.FC = () => {
               balance={walletBalance}
               onChange={handleValueChange}
             />
-            <div className="pt-4">
-              <APRItem name="Health Factor" value="0.00" />
-              <APRItem
-                iconSrc="/currencies/ETH.svg"
-                name="RDNT APR"
-                value="45.52%"
-                className="bg-secondary"
-              />
-              <APRItem
-                iconSrc="/currencies/ETH.svg"
-                name="ETH APR"
-                value="0%"
-              />
-              <APRItem
-                name="Projected APR"
-                value="0%"
-                className="bg-secondary"
-              />
-            </div>
+            <APR />
           </TabsContent>
         </div>
       )}
-      {tabValue === "borrow" && <div>borrow</div>}
+      {tabValue === "borrow" && (
+        <TabsContent
+          title="1-Click Leverage"
+          label="Increase the yield potential of your tokens with up to 4x leverage. This process borrows a user’s tokens and automatically deposits the borrowed amount, repeating these steps until your desired amount of leverage is acquired."
+        >
+          <CryptoInput
+            symbol={currency}
+            icon={currencySrc}
+            balance={walletBalance}
+            onChange={handleValueChange}
+          />
+          <APR />
+        </TabsContent>
+      )}
       {tabValue === "withdraw" && <div>withdraw</div>}
       {tabValue === "repay" && <div>repay</div>}
     </div>
